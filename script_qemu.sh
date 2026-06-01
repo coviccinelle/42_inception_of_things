@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ISO_PATH="/home/thi-phng/goinfre/ubuntu-26.04-live-server-amd64.iso"
+ISO_PATH="/home/thi-phng/goinfre/ubuntu-22.04.5-live-server-amd64.iso"
 DISK_PATH="/home/thi-phng/goinfre/IOT.qcow2"
 
 # 1. Tạo ổ đĩa ảo khoảng 15GB (thoải mái chứa các máy ảo con bên trong, file qcow2 ăn theo dung lượng thực tế nên không lo tốn 20GB ngay lập tức)
@@ -17,11 +17,11 @@ qemu-system-x86_64 \
     -m 3072 \
     -smp 2 \
     -hda "$DISK_PATH" \
-    -cdrom "$ISO_PATH" \
-    -boot d \
+   # -cdrom "$ISO_PATH" \
+   # -boot d \
     -net nic,model=virtio \
     -net user,hostfwd=tcp::2222-:22 \
-    -nographic
+    -vnc :1
 
 # ---------------- before setting up -> setup-alpine 
 # #!/bin/bash

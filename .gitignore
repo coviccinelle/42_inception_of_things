@@ -1,0 +1,45 @@
+
+# Vagrant
+*.vagrant/
+Vagrantfile.local
+
+# Kubernetes / kubeconfig / helm
+.kube/
+kubeconfig
+.kube/cache/
+.helm/
+charts/
+
+# Provider state, credentials, secrets
+*.tfstate
+*.tfstate.backup
+terraform.tfstate*
+*.pem
+*.key
+*.crt
+secrets.yml
+*.env
+.env.local
+
+# Editor / OS
+.DS_Store
+Thumbs.db
+*.swp
+*~
+.idea/
+.vscode/
+
+# Logs
+*.log
+
+# Node / deps
+node_modules/
+
+# Misc
+.vault/
+
+# Ignore local build / temp files
+dist/
+build/
+tmp/
+temp/

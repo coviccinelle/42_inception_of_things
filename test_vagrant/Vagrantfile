@@ -1,0 +1,17 @@
+Vagrant.configure("2") do |config|
+  config.vm.box = "generic/ubuntu2204"
+  config.vm.box_check_update = false
+  config.vm.hostname = "testvm"
+
+  # vagrant-qemu defaults target Apple Silicon (aarch64/hvf);
+  # these overrides make it run on x86_64 Linux with KVM acceleration.
+  config.vm.provider "qemu" do |qe|
+    qe.arch       = "x86_64"
+    qe.machine    = "q35,accel=kvm"
+    qe.cpu        = "host"
+    qe.net_device = "virtio-net-pci"
+    qe.qemu_dir   = "/usr/share/qemu"
+    qe.smp        = "1"
+    qe.memory     = "1024"
+  end
+end

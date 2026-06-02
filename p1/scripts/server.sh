@@ -2,7 +2,7 @@
 
 echo "Setting up K3s Server (Controller) ..."
 
-export K3S_KUBECONFIG_MODE="644"
+export K3S_KUBECONFIG_MODE="644" #sudo like
 export K3S_TOKEN="IoT-Secret-Token-42"
 
 # add some flags but eth1 (let k3s auto-recongnize)

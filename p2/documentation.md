@@ -39,4 +39,17 @@ curl -H http://192.168.56.110                  # -> Hello from app3
 <h1>Hello from app3.</h1>
 ```
 
+
+## Workflow
+curl -H "Host: app1.com" http://192.168.56.110
+         │
+         ▼
+    Traefik (Ingress Controller)
+         │
+         │ compare Host header with rules
+         │
+         ├── Host == "app1.com"  →  Service app-one   →  Pod app-one
+         ├── Host == "app2.com"  →  Service app-two   →  Pod app-two (×3)
+         └── Host == (others)      →  Service app-three →  Pod app-three
+
 Done part 2

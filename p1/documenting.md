@@ -3,6 +3,12 @@ Fedora (host) → QEMU/KVM → Ubuntu 22.04 VM → Vagrant + VirtualBox → các
 => this is nested virtualization (VM in VM)
 
 
+before:
+export VAGRANT_HOME=/home/thi-phng/goinfre/.vagrant.d
+source ~/.zshrc
+
+
+
 Script to verify:
 ```bash
 vagrant up

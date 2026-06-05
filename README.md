@@ -27,3 +27,13 @@ Main goals:
 ##  Part 3: K3d and Argo CD
 <img width="345" height="270" alt="image" src="https://github.com/user-attachments/assets/77dfe632-0f37-4e5f-ba69-6999c21210b2" />
 
+
+if Vagrant virtualbox error in cluster 42
+```bash
+find ~ -name "VirtualBox.xml" 2>/dev/null
+rm -rf ~/.config/VirtualBox
+echo 'export VAGRANT_HOME=~/goinfre/.vagrant.d' >> ~/.zshrc
+source ~/.zshrc
+rm -rf .vagrant
+vagrant up
+```

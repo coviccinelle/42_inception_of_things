@@ -13,6 +13,9 @@ ARGOCD_APP_FILE="$DIR/../confs/argocd-app.yaml"
 log() { printf '\033[1;34m==>\033[0m %s\n' "$*"; }
 ok()  { printf '\033[1;32m[ok]\033[0m %s\n' "$*"; }
 
+log "path DIR: $DIR"
+log "path ARGOCD_APP_FILE: $ARGOCD_APP_FILE"
+
 # Docker
 if command -v docker >/dev/null 2>&1; then
   ok "Docker déjà présent"
@@ -85,7 +88,7 @@ if kubectl -n argocd get deployment argocd-server >/dev/null 2>&1; then
   ok "Argo CD déjà installé"
 else
   log "Installation de Argo CD"
-  kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+  kubectl apply --server-side -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
   ok "Manifests Argo CD appliqués"
 
   log "Attente Argo CD prêt (server pod)"

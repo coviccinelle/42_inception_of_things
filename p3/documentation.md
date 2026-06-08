@@ -126,7 +126,7 @@ spec:
 ```
 
 ```bash
-kubectl apply -f p3/confs/argocd-app.yaml   # register app with Argo CD
+kubectl apply -f ~/ iot/p3/confs/argocd-app.yaml   # register app with Argo CD
 ```
 
 ### Verify & test

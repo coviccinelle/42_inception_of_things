@@ -4,8 +4,8 @@ Vagrant.configure("2") do |config|
 
   # Config hardware for VirtualBox
   config.vm.provider "virtualbox" do |vb|
-    vb.memory = 512
-    vb.cpus = 1
+    vb.memory = 2048
+    vb.cpus = 2
   end
 
   # Store VirtualBox VMs in ~/goinfre (42 home disk quota) instead of ~/VirtualBox VMs
